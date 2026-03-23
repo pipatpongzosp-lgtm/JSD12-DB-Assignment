@@ -21,6 +21,7 @@ WHERE category ='Side';
 
 -- Your thinking:
 --key ต้องการอัพเดตรายชื่อมนูอาหารนั่งเล่น พร้อมราคา ทุกเมนู
+--data collect name,price,MenuItems table,catagory
 --step
 --  เลือกดึงข้อมูลชื่อและราคาอาหาร  = SELECT name,price
 --  FROM [ตารางที่ค้นหาข้อมูล] = MenuItems

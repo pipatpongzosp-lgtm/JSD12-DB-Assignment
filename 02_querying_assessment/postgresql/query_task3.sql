@@ -2,6 +2,7 @@
 -- At the end of the month, the owner wants to reward the hardest-working cashiers.
 -- To decide fairly, they want to see how many orders each staff member has processed,
 -- with the busiest staff member appearing at the top of the list.
+-- Hint: Write a query to find the total number of orders processed by each staff member.
 
 --สร้างตางรางนับออเดอร์
 WITH totalorder AS 
@@ -34,14 +35,19 @@ ORDER BY total_count DESC ;
 -- Write in English or Thai. Do not skip this step.
 --
 -- Your thinking:
-/* key:
+/* 
+key:
         1.hardest-working cashiers
-        2.how many orders each staff member has processed, 
-    Define  he want to know whole cashier is top find most total order
-    step    1 เลือกคอลัมที่เราต้องการดึงข้อมูล Select first_name,last_name,staff id,order id  form Staff and Oders
-            2 เราจะสร้างตารางที่นับจำนวนออเดอร์ เพื่อช่วยในการเปรี่ยบเทียบว่าใครมีออเดอร์มากกว่ากัน > use WITH 
-            3 เราจะดึงข้อมูลจากตารางนับออเดอร์ มารวมกับข้อมูลตารางข้อที่1 
-            4 จัดเรียงข้อมูลลำดับ โดยให้คนที่มีออเดรอ์มากที่สุดอยู่อันดับ 1
+        2.how many orders each staff member has processed
+
+data            orders table ,name,order id
+collect
+
+define  he want to know whole cashier is top find most total order
+step    1 เลือกคอลัมที่เราต้องการดึงข้อมูล Select first_name,last_name,staff id,order id  form Staff and Oders
+        2 เราจะสร้างตารางที่นับจำนวนออเดอร์ เพื่อช่วยในการเปรี่ยบเทียบว่าใครมีออเดอร์มากกว่ากัน > use WITH 
+        3 เราจะดึงข้อมูลจากตารางนับออเดอร์ มารวมกับข้อมูลตารางข้อที่1 
+        4 จัดเรียงข้อมูลลำดับ โดยให้คนที่มีออเดรอ์มากที่สุดอยู่อันดับ 1
 */
 
 
@@ -70,4 +76,3 @@ ORDER BY total_count DESC ;
 
 
 
--- Hint: Write a query to find the total number of orders processed by each staff member.

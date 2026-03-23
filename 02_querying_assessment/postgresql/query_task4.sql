@@ -25,6 +25,9 @@ WHERE Suppliers.name = 'Freshest Farm Produce' ;
 /*  key 1.Freshest Farm Produce maybe delayed on their next delivery.
         2.which ingredients depend on that supplier 
 
+    data        name,Suplier table ,Stock level, Ingredients table
+    colllet
+
     find  ingredients depend on Freshest Farm Produce
 
     step
