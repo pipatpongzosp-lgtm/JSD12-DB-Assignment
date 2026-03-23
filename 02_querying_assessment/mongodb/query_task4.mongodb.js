@@ -6,7 +6,14 @@
 // Hint: Write an aggregation query on the orders collection to calculate the total revenue from all orders combined.
 // The result should be a single document with a field named total_revenue.
 use("chrome-burger-db")
-db.orders.find({})
+db.orders.aggregate([
+      {$group: 
+            {_id:null,
+            total_revenue:{$sum: "$total_price"}}
+           
+      },
+    {$project: {total_revenue: 1}}
+])
 
 // Bonus: The dataset is identical in the PostgreSQL database, meaning the same business insight can be retrieved.
 // Write the equivalent query for PostgreSQL. See query_task4_bonus.sql
@@ -20,12 +27,20 @@ db.orders.find({})
 // Write in English or Thai. Do not skip this step.
 //
 // Your thinking:
-/* key  1.รถขายอาหาร (Food Truck) ทำรายได้รวมไปทั้งหมดเท่าไหร่จากทุกคำสั่งซื้อที่ถูกบันทึกไว้
-        2.ผลลัพธ์ที่ดึงออกมาจะต้องส่งค่ากลับมาเพียงค่าเดียว และต้องตั้งชื่อคอลัมน์นั้นว่า total_revenue
-  step  1.เรียกใช้ฐานข้อมูล
-        2.ต้องไปเรียกใช้ข้อมูล total price จากเอกสาร Orders
-        3.นำข้อมูล total มาคำนวณผลรวม sum 
-        4.ตั้งชื่อคอมลัมว่า total_revenue
+/*
+key   1.รถขายอาหาร (Food Truck) ทำรายได้รวมไปทั้งหมดเท่าไหร่จากทุกคำสั่งซื้อที่ถูกบันทึกไว้
+      2.ผลลัพธ์ที่ดึงออกมาจะต้องส่งค่ากลับมาเพียงค่าเดียว และต้องตั้งชื่อคอลัมน์นั้นว่า total_revenue
+
+data            total_price, orders, _id
+collection
+
+find  รายรับทั้งหมดเท่าไร
+
+step  1.เรียกใช้ฐานข้อมูลในการค้นหา
+      2.ต้องไปเรียกใช้ข้อมูล total_price จากเอกสาร Orders เพื่อหายอดขาย
+      3.นำข้อมูล total_price มาคำนวณผลรวม sum  นำยอดขายที่ได้มารวมกันจะได้เป็นรายรับทั้งหมด
+      4.สรุปผลโดยเก็บข้อมูล และตั้งชื่อ key ว่า total_revenue
+       
 
 
 

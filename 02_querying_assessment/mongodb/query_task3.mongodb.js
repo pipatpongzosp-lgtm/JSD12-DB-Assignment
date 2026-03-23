@@ -20,11 +20,18 @@ db.ingredients.find({stock_level: {$gte :100}}).sort({stock_level:-1});
 // Write in English or Thai. Do not skip this step.
 //
 // Your thinking:
-/* key  1.list of every ingredient with a stock level of 100 or more
+/* 
+key     1.list of every ingredient with a stock level of 100 or more
         2.order by DESC
-    step 1 เรียกใช้ฐานข้อมูลล
-    step 2 ค้นหารายการวัตถุดิบพร้อมกับจำนวนวัตถุดิบ ทั้งหมดจาก เอกสาร ingredients
-    step 3 ดึงข้อมูลจาก เอกสารในข้อ2 พร้อมจัดลำดับเพื่อให้ช่วยในการตัดสินใจซื้อวัตถุดิบเพิ่ม
+        
+data          stock_level,ingredientts  
+collection   
+
+find    ต้องการทราบยอดวัตถุดิบ เพื่อประเมินว่าต้องซื่้อวัตถุดิบอะไรเพิ่ม และลดการซื้อโดยไม่จำเป็น
+
+step    1. เรียกใช้ฐานข้อมูลล
+        2. ค้นหารายการวัตถุดิบพร้อมกับจำนวนวัตถุดิบ ทั้งหมดจาก เอกสาร ingredients
+        3. ดึงข้อมูลจาก เอกสารในข้อ2 พร้อมจัดลำดับเพื่อให้ช่วยในการตัดสินใจซื้อวัตถุดิบเพิ่ม
 
 
 

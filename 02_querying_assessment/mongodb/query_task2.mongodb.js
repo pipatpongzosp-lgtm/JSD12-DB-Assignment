@@ -12,13 +12,9 @@ db.orders.find(
 {order_date : 1, total_price : 1, _id:0}
 
 );
-    //{firstname : "Jane", lastname: "Doe"},
-    //{order_date: 1, total_amount: 1, _id: 0}
 
 
-/*db.orders.aggregate([
-//    {$match: {fist_name:"Jane",last_name:"Doe"}}
-])*/
+    
 // Bonus: The dataset is identical in the PostgreSQL database, meaning the same business insight can be retrieved.
 // Write the equivalent query for PostgreSQL. See query_task2_bonus.sql
 
@@ -32,11 +28,16 @@ db.orders.find(
 // 
 // Your thinking:
 /* 
-    key  1.look oreder history of Jane Doe
+key     1.look oreder history of Jane Doe
         2.The order detail only show with date and value
-    step
-        1.call the database >
-        2.find staff member "Jane Doe" in Orders > โดยใช้ไอดีมาค้นหา 
+
+data            staff_id, orders
+collection
+
+fine    Jane Doe จะมีประเมินผลงาน โดยการดู ข้อมูลออเดอร์ ex. วันที่บิล และ มูลค่าในบิลแต่ละใบที่เธอได้รับผิดชอบ
+
+step    1.call the database > use("chrome-burger-db")
+        2.find staff member "Jane Doe" in Orders > โดยใช้ไอดีมาค้นหา เนื่องจากหาชื่อตอนแรกแล้วไม่เจอและหากเกิดการชื่อซ้ำจะกลายเป็นปัญหา
         3.find the date and value that she done แล้วดึงข้อมูลให้โชว์
         
 */
